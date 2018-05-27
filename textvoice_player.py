@@ -9,6 +9,7 @@ while texto!=("."):
         if prev_text==(""):
             print(chr(7),"THERE'S NOT A PREVIOUS MESSAGE")
         else:
+            print("REPEATING MESSAGE")
             winspeech.say(prev_text)
     else:
         winspeech.say(texto)
