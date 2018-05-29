@@ -1,15 +1,15 @@
 import winspeech
 print("TEXT_VOICE")
-print("ENTER \'.\' TO FINISH THE PROGRAM AND SPACE (\' \') TO REPIT THE PREVIOUS MESSAGE")
+print("INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR EL ÚLTIMO MENSAGE INTRODUCIDO/REPRODUCIDO")
 texto=("")
 prev_text=("")
 while texto!=("."):
-    texto=input("Your text: ")
+    texto=input("TU TEXTO EN INGLÉS: ")
     if texto==(" "):
         if prev_text==(""):
-            print(chr(7),"THERE'S NOT A PREVIOUS MESSAGE")
+            print(chr(7),"NO HAY MENSAGE ANTERIOR")
         else:
-            print("REPEATING MESSAGE")
+            print("REPITIENDO MENSAGE")
             winspeech.say(prev_text)
     else:
         winspeech.say(texto)
