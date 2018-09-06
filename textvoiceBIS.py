@@ -1,6 +1,6 @@
 import win32com.client as wc
 print("REPRODUCCIÓN DE TEXTO MEDIANTE VOZ")
-print("INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR EL ÚLTIMO MENSAGE INTRODUCIDO/REPRODUCIDO")
+print("INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO")
 texto=("")
 prev_text=("")
 voice=wc.Dispatch("Sapi.SpVoice")#Llamar al método Dispatch del módulo
@@ -9,9 +9,9 @@ while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
     texto=texto.lower()
     if texto==(" "):
         if prev_text==(""):
-            print("NO HAY MENSAGE ANTERIOR",chr(7))
+            print("NO HAY MENSAJE ANTERIOR",chr(7))
         else:
-            print("REPITIENDO MENSAGE")
+            print("REPITIENDO MENSAJE")
             voice.Speak(prev_text)
     else:
         voice.Speak(texto)
