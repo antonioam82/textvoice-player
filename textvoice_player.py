@@ -1,16 +1,28 @@
-import winspeech
-print("TEXT_VOICE")
+import win32com.client as wc
+print(" _________")
+print("|___   ___|")
+print("    | | _____        _____               ______  __  ______  _____  ")
+print("    | ||  ___|/\  /\|_   _|   /\      /\|  __  ||  ||  ____||  ___| ")
+print("    | || |    \ \/ /  | | ____\ \    / /| |  | ||  || |     | |     ")
+print("    | || >>>   \  /   | ||    |\ \  / / | |  | ||  || |     | >>>   ")
+print("    | || |___  /  \   | ||____| \ \/ /  | |__| ||  || |____ | |___  ")
+print("    |_||_____|/_/\_\  |_|        \__/   |______||__||______||_____| ")
+print("---------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
+print("")
 print("INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO")
 texto=("")
 prev_text=("")
-while texto!=("."):
-    texto=input("TU TEXTO EN INGLÉS: ")
+speak=wc.Dispatch("Sapi.SpVoice")
+while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
+    texto=input("TU TEXTO: ")
     if texto==(" "):
         if prev_text==(""):
-            print(chr(7),"NO HAY MENSAJE ANTERIOR")
+            print("NO HAY MENSAJE ANTERIOR",chr(7))
         else:
             print("REPITIENDO MENSAJE")
-            winspeech.say(prev_text)
+            speak.Speak(prev_text)
     else:
-        winspeech.say(texto)
-        prev_text=texto
+        speak.Speak(texto)
+        prev_text=texto 
+    
