@@ -1,6 +1,16 @@
 import win32com.client as wc
 
-print("REPRODUCCIÓN DE TEXTO MEDIANTE VOZ")
+print(" _________")
+print("|___   ___|")
+print("    | | _____        _____               ______  __  ______  _____  ")
+print("    | ||  ___|/\  /\|_   _|   /\      /\|  __  ||  ||  ____||  ___| ")
+print("    | || |    \ \/ /  | | ____\ \    / /| |  | ||  || |     | |     ")
+print("    | || >>>   \  /   | ||    |\ \  / / | |  | ||  || |     | >>>   ")
+print("    | || |___  /  \   | ||____| \ \/ /  | |__| ||  || |____ | |___  ")
+print("    |_||_____|/_/\_\  |_|        \__/   |______||__||______||_____| ")
+print("---------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
+print("")
 print("INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO")
 texto=("")
 prev_text=("")
@@ -20,7 +30,7 @@ def re(t,regis,textos):
 regis=ns(input("¿Desea registrar la conversación?: "))
 textos=[]
 if regis=="s":
-    registro="conversacion.txt"
+    registro=(input("Introduzca nombre del fichero: ")+".txt")
     fichero=open(registro,"w")
 while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
     texto=re(input("TU TEXTO: "),regis,textos)
