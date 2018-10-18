@@ -30,7 +30,16 @@ def re(t,regis,textos):
 regis=ns(input("¿Desea registrar la conversación?: "))
 textos=[]
 if regis=="s":
-    registro=(input("Introduzca nombre del fichero: ")+".txt")
+    while True:
+        registro=(input("Introduzca nombre del fichero: ")+".txt")
+        try:
+            fichero=open(registro,"r")
+            exits=ns(input("El archivo ya existe ¿Desea reemplazarlo?: "))
+            if exits=="s":
+                fichero.close()
+                break
+        except:
+            break
     fichero=open(registro,"w")
 while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
     texto=re(input("TU TEXTO: "),regis,textos)
