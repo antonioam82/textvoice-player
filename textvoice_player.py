@@ -10,7 +10,7 @@ print("    |_||_____|/_/\_\  |_|        \__/   |______||__||______||_____| ")
 print("---------------------------------------------------------------------")
 print("---------------------------------------------------------------------")
 print("")
-print("""INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \')PARA REPETIR
+print("""INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR
 EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO.""")
 print("")
 texto=("")
