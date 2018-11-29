@@ -10,7 +10,9 @@ print("    |_||_____|/_/\_\  |_|        \__/   |______||__||______||_____| ")
 print("---------------------------------------------------------------------")
 print("---------------------------------------------------------------------")
 print("")
-print("INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO")
+print("""INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \')PARA REPETIR
+EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO.""")
+print("")
 texto=("")
 prev_text=("")
 speak=wc.Dispatch("Sapi.SpVoice")
@@ -24,5 +26,5 @@ while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
             speak.Speak(prev_text)
     else:
         speak.Speak(texto)
-        prev_text=texto 
-    
+        prev_text=texto
+
