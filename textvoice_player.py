@@ -13,11 +13,12 @@ print("---------------------------------------------------------------------")
 print("---------------------------------------------------------------------")
 print("")
 print("""INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR
-EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO.""")
-print("")
+EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO.\n""")
+
 texto=("")
 prev_text=("")
 speak=wc.Dispatch("Sapi.SpVoice")
+
 while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
     texto=input("TU TEXTO: ")
     if texto==(" "):
