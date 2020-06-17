@@ -1,6 +1,18 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-import win32com.client as wc
+import pyttsx3
+from VALID import enum
+
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('rate',180)
+text = ""
+prev_text=""
+listaV = engine.getProperty("voices")
+
+print("******************************ESTABLECE SPEAKER******************************")
+op = enum(listaV)
+engine.setProperty('voice',voices[op].id)
+
+
 print(" _________")
 print("|___   ___|")
 print("    | | _____        _____               ______  __  ______  _____  ")
@@ -10,24 +22,23 @@ print("    | || >>>   \  /   | ||    |\ \  / / | |  | ||  || |     | >>>   ")
 print("    | || |___  /  \   | ||____| \ \/ /  | |__| ||  || |____ | |___  ")
 print("    |_||_____|/_/\_\  |_|        \__/   |______||__||______||_____| ")
 print("---------------------------------------------------------------------")
-print("---------------------------------------------------------------------")
-print("")
-print("""INTRODUCE \'.\' PARA FINALIZAR EL PROGRAMA Y ESPACIO (\' \') PARA REPETIR
-EL ÚLTIMO MENSAJE INTRODUCIDO/REPRODUCIDO.\n""")
+print("---------------------------------------------------------------------\n")
 
-texto=("")
-prev_text=("")
-speak=wc.Dispatch("Sapi.SpVoice")
+def speak(m):
+    engine.say(m)
+    engine.runAndWait()
 
-while texto!=("."): #MIENTRAS QUE "texto" SEA DISTINTO A "."
-    texto=input("TU TEXTO: ")
-    if texto==(" "):
-        if prev_text==(""):
+while text != ".":
+    text = input("TEXT: ")
+    if text == " ":
+        if prev_text == "":
             print("NO HAY MENSAJE ANTERIOR",chr(7))
         else:
             print("REPITIENDO MENSAJE")
-            speak.Speak(prev_text)
+            speak(prev_text)
+            
     else:
-        speak.Speak(texto)
-        prev_text=texto
+        speak(text)
+        prev_text = text
+
 
