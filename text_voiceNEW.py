@@ -10,11 +10,8 @@ listaV = engine.getProperty("voices")
 
 print("******************************ESTABLECE SPEAKER******************************")
 op = enum(listaV)
+engine.setProperty('voice',voices[listaV.index(op)].id)
 
-if op == 0:
-        engine.setProperty('voice',voices[1].id)
-elif op == 1:
-        engine.setProperty('voice',voices[0].id)
 
 print(" _________")
 print("|___   ___|")
