@@ -1,24 +1,20 @@
 import pyttsx3
+from VALID import enum
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('rate',180)
 text = ""
 prev_text=""
+listaV = engine.getProperty("voices")
 
-print("*ESTABLECE IDIOMA*")
-print("A)-ESPAÑOL--------")
-print("B)-INGLÉS---------")
+print("******************************ESTABLECE SPEAKER******************************")
+op = enum(listaV)
 
-while True:
-    op = input("Introduzca opción: ")
-    if op == "A":
-        engine.setProperty('voice',voices[0].id)
-        break
-    elif op == "B":
+if op == 0:
         engine.setProperty('voice',voices[1].id)
-        break
-    print("Intrpduzca \'A\' o \'B\' según su opción")
+elif op == 1:
+        engine.setProperty('voice',voices[0].id)
 
 print(" _________")
 print("|___   ___|")
