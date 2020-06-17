@@ -3,7 +3,7 @@ from VALID import enum
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('rate',180)
+engine.setProperty('rate',174)
 text = ""
 prev_text=""
 listaV = engine.getProperty("voices")
