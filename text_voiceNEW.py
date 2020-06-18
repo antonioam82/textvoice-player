@@ -1,5 +1,12 @@
 import pyttsx3
 from VALID import enum
+import os
+import sys
+
+if os.name == "posix":
+   var = "clear"        
+elif os.name == "ce" or os.name == "nt" or os.name == "dos":
+   var = "cls"
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -8,9 +15,10 @@ text = ""
 prev_text=""
 listaV = engine.getProperty("voices")
 
-print("******************************ESTABLECE SPEAKER******************************")
+print("*****************************************CHOOSE SPEAKER*****************************************")
 op = enum(listaV)
 engine.setProperty('voice',voices[listaV.index(op)].id)
+os.system(var)
 
 
 print(" _________")
@@ -32,9 +40,9 @@ while text != ".":
     text = input("TEXT: ")
     if text == " ":
         if prev_text == "":
-            print("NO HAY MENSAJE ANTERIOR",chr(7))
+            print("NO HAY TEXTO PREVIO",chr(7))
         else:
-            print("REPITIENDO MENSAJE")
+            print("REPITEIENDO AUDIO")
             speak(prev_text)
             
     else:
