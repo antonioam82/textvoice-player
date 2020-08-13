@@ -15,7 +15,7 @@ text = ""
 prev_text=""
 listaV = engine.getProperty("voices")
 
-print("*****************************************CHOOSE SPEAKER*****************************************")
+print("**********************************CHOOSE SPEAKER**********************************")
 op = enum(listaV)
 engine.setProperty('voice',voices[listaV.index(op)].id)
 os.system(var)
@@ -42,10 +42,11 @@ while text != ".":
         if prev_text == "":
             print("NO HAY TEXTO PREVIO",chr(7))
         else:
-            print("REPITEIENDO AUDIO")
+            print("REPITIENDO AUDIO")
             speak(prev_text)
             
     else:
         speak(text)
         prev_text = text
+
 
